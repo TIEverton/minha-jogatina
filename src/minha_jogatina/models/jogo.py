@@ -37,7 +37,6 @@ class Jogo(ABC):
 
     @status.setter
     def status(self, novo_status: StatusJogo):
-        # Requer ao menos 1 hora para finalizar
         if novo_status == StatusJogo.FINALIZADO and self.horas_jogadas < 1.0:
             raise ValueError("Não é possível finalizar um jogo com menos de 1h jogada.")
         self._status = novo_status
@@ -48,7 +47,6 @@ class Jogo(ABC):
 
     @avaliacao.setter
     def avaliacao(self, nota: float):
-        # Só permite avaliar jogos finalizados
         if self.status != StatusJogo.FINALIZADO:
             raise ValueError("O jogo só pode receber avaliação após ser marcado como 'FINALIZADO'.")
         if not (0 <= nota <= 10):
@@ -56,23 +54,31 @@ class Jogo(ABC):
         self._avaliacao = nota
 
     def __str__(self):
-        """Retorna resumo do jogo."""
         return f"{self.titulo} ({self.plataforma}) - {self.status.value}"
 
     def __repr__(self):
-        """Retorna representação para debug."""
         return (f"Jogo(titulo='{self.titulo}', plataforma='{self.plataforma}', "
                 f"status='{self.status.value}', horas={self.horas_jogadas})")
 
     def __eq__(self, outro):
-        """Compara por título e plataforma."""
         if not isinstance(outro, Jogo):
             return False
         return (self.titulo.lower() == outro.titulo.lower() and 
                 self.plataforma.lower() == outro.plataforma.lower())
 
     def __lt__(self, outro):
-        """Ordena por horas jogadas."""
         if not isinstance(outro, Jogo):
             return NotImplemented
         return self.horas_jogadas < outro.horas_jogadas
+
+class JogoPC(Jogo):
+    def __init__(self, titulo: str, genero: str):
+        super().__init__(titulo, genero, "PC")
+
+class JogoConsole(Jogo):
+    def __init__(self, titulo: str, genero: str):
+        super().__init__(titulo, genero, "Console")
+
+class JogoMobile(Jogo):
+    def __init__(self, titulo: str, genero: str):
+        super().__init__(titulo, genero, "Mobile")
