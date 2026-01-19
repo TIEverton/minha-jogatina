@@ -1,3 +1,4 @@
+#!/usr/bin/env python3
 """
 Módulo principal da aplicação 'minha-jogatina'.
 Implementa uma CLI (Command Line Interface) para gerenciar coleções de jogos.
@@ -8,12 +9,11 @@ import json
 import os
 from typing import Dict, Any, List
 
-from src.minha_jogatina import (
+from src.minha_jogatina.models import (
     StatusJogo,
     JogoPC,
     JogoConsole,
     JogoMobile,
-    Colecao,
 )
 from src.minha_jogatina.models.relatorio import Relatorio
 from src.minha_jogatina.dados import RepositorioDados
