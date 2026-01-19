@@ -4,8 +4,6 @@ Aplicação CLI para gerenciar coleções de jogos. Projeto desenvolvido para a 
 
 ## Instalação
 
-### Método 1: Instalação Local (Recomendado)
-
 Clone ou baixe o repositório e instale em modo desenvolvimento:
 
 ```bash
@@ -23,7 +21,9 @@ minha_jogatina criar-colecao "Meus Jogos"
 
 ## Como Usar
 
-**Listar coleções:**
+### Gerenciamento de Coleções
+
+**Listar todas as coleções:**
 ```bash
 minha-jogatina listar-colecoes
 ```
@@ -32,6 +32,13 @@ minha-jogatina listar-colecoes
 ```bash
 minha-jogatina criar-colecao "Meus Favoritos"
 ```
+
+**Excluir uma coleção:**
+```bash
+minha-jogatina excluir-colecao "Meus Favoritos"
+```
+
+### Gerenciamento de Jogos
 
 **Adicionar um jogo:**
 ```bash
@@ -43,26 +50,63 @@ minha-jogatina adicionar-jogo "Meus Favoritos" \
   --horas 50
 ```
 
-**Listar jogos:**
+**Listar jogos de uma coleção:**
 ```bash
 minha-jogatina listar-jogos "Meus Favoritos"
 ```
 
-**Ver detalhes de um jogo:**
+**Exibir detalhes de um jogo:**
 ```bash
 minha-jogatina exibir-jogo-detalhes "Meus Favoritos" "The Witcher 3"
 ```
 
-**Gerar relatórios:**
+**Atualizar um jogo:**
+```bash
+minha-jogatina atualizar-jogo "Meus Favoritos" "The Witcher 3" \
+  --status "Finalizado" \
+  --horas 80 \
+  --avaliacao 9
+```
+
+**Excluir um jogo:**
+```bash
+minha-jogatina excluir-jogo "Meus Favoritos" "The Witcher 3"
+```
+
+### Relatórios e Estatísticas
+
+**Total de horas jogadas:**
 ```bash
 minha-jogatina total-horas
+```
+
+**Top 5 jogos mais bem avaliados:**
+```bash
 minha-jogatina top-5-jogos
+```
+
+**Média de avaliação:**
+```bash
 minha-jogatina media-avaliacao
 ```
+
+### Status Disponíveis
+
+- `A Jogar` - Jogo ainda não iniciado
+- `Jogando` - Jogo em progresso
+- `Pausado` - Jogo pausado temporariamente
+- `Finalizado` - Jogo completado
+
+### Ajuda
 
 **Ver ajuda completa:**
 ```bash
 minha-jogatina -h
+```
+
+**Ver ajuda de um comando específico:**
+```bash
+minha-jogatina adicionar-jogo -h
 ```
 
 ## Conceitos de POO Implementados
