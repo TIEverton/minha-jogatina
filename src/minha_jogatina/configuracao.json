@@ -1,0 +1,11 @@
+{
+    "generos_favoritos": [
+        "RPG",
+        "Aventura"
+    ],
+    "meta_anual_jogos_finalizados": 15,
+    "plataforma_principal": "PC",
+    "limite_jogos_simultaneos": 3,
+    "formato_persistencia": "json",
+    "arquivo_dados": "jogos.json"
+}
