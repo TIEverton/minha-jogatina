@@ -2,6 +2,8 @@
 
 Aplicação CLI para gerenciar coleções de jogos. Projeto desenvolvido para a disciplina de Programação Orientada a Objetos (UFCA).
 
+**Observação para o professor/tutor:** Os commits da conta edgarestevam contém código tanto da parte do aluno Edgar quanto da parte do aluno Petrus.
+
 ## Instalação
 
 Clone ou baixe o repositório e instale em modo desenvolvimento:
@@ -46,7 +48,7 @@ minha-jogatina adicionar-jogo "Meus Favoritos" \
   --titulo "The Witcher 3" \
   --genero "RPG" \
   --plataforma PC \
-  --status "Jogando" \
+  --status "JOGANDO" \
   --horas 50
 ```
 
@@ -63,7 +65,7 @@ minha-jogatina exibir-jogo-detalhes "Meus Favoritos" "The Witcher 3"
 **Atualizar um jogo:**
 ```bash
 minha-jogatina atualizar-jogo "Meus Favoritos" "The Witcher 3" \
-  --status "Finalizado" \
+  --status "FINALIZADO" \
   --horas 80 \
   --avaliacao 9
 ```
@@ -92,10 +94,9 @@ minha-jogatina media-avaliacao
 
 ### Status Disponíveis
 
-- `A Jogar` - Jogo ainda não iniciado
-- `Jogando` - Jogo em progresso
-- `Pausado` - Jogo pausado temporariamente
-- `Finalizado` - Jogo completado
+- `NÃO INICIADO` - Jogo ainda não iniciado
+- `JOGANDO` - Jogo em progresso
+- `FINALIZADO` - Jogo completado
 
 ### Ajuda
 
